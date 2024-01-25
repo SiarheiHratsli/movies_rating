@@ -1,4 +1,4 @@
-# Nazwa Projektu: FilmRatings
+# FilmRatings
 
 Projekt `FilmRatings` to aplikacja webowa, stworzona z wykorzystaniem frameworka Django, która umożliwia użytkownikom dodawanie recenzji filmów. Aplikacja integruje się z zewnętrznym API, aby dostarczać szczegółowe informacje o filmach, a użytkownicy mogą oceniać filmy, dodawać własne recenzje oraz przeglądać recenzje innych użytkowników.
 

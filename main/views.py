@@ -80,9 +80,11 @@ def add_review(request, movie_title):
             review_text = request.POST.get('review_text')
             rating = request.POST.get('rating')
             review_type = request.POST.get('review_type')
+            name = request.POST.get('name')
 
             article = Articles(
                 title=movie_title,
+                name=name,
                 body=review_text,
                 rating=int(rating),
                 review_type=int(review_type),

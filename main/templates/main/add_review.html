@@ -1,0 +1,69 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+    MAIN PAGE
+{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-6">
+    <div class="bg-gray-900 text-white rounded-lg shadow-lg overflow-hidden max-w-4xl p-4 mb-6 mx-auto">
+        <h2 class="text-xl md:text-3xl font-bold mb-6">Zostawić recenzje dla filmu</h2>
+        <form action="{% url 'add_review' movie_title=movie_title %}" method="post">
+            {% csrf_token %}
+            <div class="mb-4">
+                <label for="movie_title" class="block mb-2 text-sm font-bold">Nazwa:</label>
+                <input type="text" id="movie_title" name="movie_title" value="{{ movie_title }}" class="w-full p-3 rounded bg-gray-800 border border-gray-700" required readonly>
+            </div>
+            <div class="mb-4">
+                <label for="review_text" class="block mb-2 text-sm font-bold">Twoja recenzja:</label>
+                <textarea id="review_text" name="review_text" rows="4" class="w-full p-3 rounded bg-gray-800 border border-gray-700" required></textarea>
+            </div>
+            <div class="mb-4">
+                <label for="rating" class="block mb-2 text-sm font-bold">Twoja ocena:</label>
+                <select id="rating" name="rating" class="w-50 p-3 rounded bg-gray-800 border border-gray-700" required>
+                    <option value="">Wybierz ocenę</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            <div class="mb-4">
+                <label for="rating" class="block mb-2 text-sm font-bold">Typ recenzji:</label>
+                <select id="review_type" name="review_type" class="w-50 p-3 rounded bg-gray-800 border border-gray-700" required>
+                    <option value="">Wybierz typ</option>
+                    <option value="1">Pozytywna</option>
+                    <option value="0">Negatywna</option>
+                </select>
+            </div>
+            <!-- reCAPTCHA -->
+            <div class="recaptcha-container mx-auto">
+                <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+            </div>
+            <div class="flex justify-end mt-6">
+                <button type="submit" class="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-blue-700 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Wyślij</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+@media screen and (max-width: 640px) {
+    .g-recaptcha {
+        transform: scale(0.77);
+        transform-origin: left top;
+        -webkit-transform: scale(0.77);
+        -webkit-transform-origin: left top;
+        -ms-transform: scale(0.77);
+        -ms-transform-origin: left top;
+    }
+}
+</style>
+{% endblock %}
+

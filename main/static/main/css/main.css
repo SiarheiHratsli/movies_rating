@@ -1,0 +1,10 @@
+@media screen and (max-width: 640px) {
+    .g-recaptcha {
+        transform: scale(0.77);
+        transform-origin: left top;
+        -webkit-transform: scale(0.77);
+        -webkit-transform-origin: left top;
+        -ms-transform: scale(0.77);
+        -ms-transform-origin: left top;
+    }
+}

@@ -19,8 +19,8 @@ Kroki, aby uruchomić środowisko deweloperskie:
 
 1. Sklonuj repozytorium:
    ```sh
-   git clone https://github.com/twoj-repozytorium/twoj-projekt.git
-   cd twoj-projekt
+   git clone https://github.com/SiarheiHratsli/movies_rating
+   cd movies_rating
    ```
 2. Zainstaluj wymagane pakiety:
    ```sh
